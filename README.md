@@ -3,7 +3,7 @@
 Organization-wide defaults GitHub applies to every AllSmartInc repository that
 does not define its own.
 
-- `ISSUE_TEMPLATE/bug.yml` — the Bug form: where it happens, what you see, what
+- `.github/ISSUE_TEMPLATE/bug.yml` — the Bug form: where it happens, what you see, what
   you expected, on which screen. ditoAi plans and fixes issues filed with it.
 
 The master copy lives in `AllSmartInc/ditoai-core` under `templates/ISSUE_TEMPLATE/`.
