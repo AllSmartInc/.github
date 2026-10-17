@@ -1,0 +1,46 @@
+name: Bug
+description: Something that worked, or should work, does not. ditoAi can plan and fix these.
+labels: [bug]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where does it happen?
+      description: The page, dialog or action - e.g. "Income page, the filters" or "Lease > Tenant registration > Download".
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What do you see?
+      description: What goes wrong. Paste or drag in a screenshot, and copy any error message word for word.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+      description: What should happen or be shown. "The PDF downloads", "no stray commas", "the whole filter fits on the screen".
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Screen
+      options:
+        - Phone
+        - Tablet
+        - Desktop
+        - Any
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to get there
+      description: Optional, when it is not obvious from the above.
+      placeholder: |
+        1. Open a lease that has a tenant registration
+        2. Click Download
+    validations:
+      required: false
