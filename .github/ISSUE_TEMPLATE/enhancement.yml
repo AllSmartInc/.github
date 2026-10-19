@@ -5,36 +5,61 @@ body:
   - type: markdown
     attributes:
       value: |
-        For something that is broken, use **Bug** instead. An enhancement adds to one screen or flow - a link, a column, a filter, a button. Bigger work (new screens, new data, several flows) needs a design first; ditoAi will say so if the plan comes out too large.
+        For something that is broken, use **Bug** instead. Describe the problem you want solved; you do not need to know the solution. If you are not sure, ditoAi first replies with options grounded in what the product already does - you pick one, and only then does it make a plan to approve.
   - type: input
     id: where
     attributes:
       label: Where should it go?
-      description: The page, dialog or flow - e.g. "Contracts > a contract's page, under History" or "Settings > Notifications".
+      description: The page, dialog or flow - e.g. "Contracts > a contract's page" or "Settings > Notifications".
     validations:
       required: true
   - type: textarea
-    id: what
+    id: problem
     attributes:
-      label: What should you be able to do or see?
-      description: In your own words. Paste or drag in a screenshot of where it goes, or a sketch.
-      placeholder: See the items this record created, and open one to act on it.
+      label: What is the problem or goal?
+      description: What you cannot do today, or what gets in the way - not the solution. Paste or drag in a screenshot of where it happens.
+      placeholder: When a vendor misses a visit, I cannot get to the ticket to act on it.
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
       label: What would you do with it?
-      description: The task it helps with. It decides what is worth showing - e.g. "when a visit is missed, open its ticket and reassign it".
+      description: The task it helps with. It decides what is worth showing - e.g. "open the ticket and reassign it".
     validations:
       required: true
+  - type: dropdown
+    id: certainty
+    attributes:
+      label: How sure are you about the solution?
+      description: Unless you know what you want, ditoAi replies with options first.
+      options:
+        - I know what I want
+        - I have an idea, open to options
+        - I only know the problem
+    validations:
+      required: true
+  - type: textarea
+    id: ideas
+    attributes:
+      label: Ideas you have
+      description: Optional. Read as ideas, not instructions - e.g. "a link per cycle? or let the operator complete the visit?".
+    validations:
+      required: false
+  - type: textarea
+    id: unsure
+    attributes:
+      label: What are you unsure about?
+      description: Optional - questions you want answered before anything is built.
+    validations:
+      required: false
   - type: textarea
     id: done
     attributes:
       label: How will you know it is done?
-      description: What you will check - e.g. "each cycle lists its tickets with their status; clicking one opens it".
+      description: Fill this in if you know what you want. Otherwise ditoAi proposes it with the options.
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: device
     attributes:
