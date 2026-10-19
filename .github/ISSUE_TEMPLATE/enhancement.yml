@@ -1,0 +1,55 @@
+name: Enhancement
+description: An improvement to something that works - a screen should let you do or show more than it does. ditoAi can plan and build small ones.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For something that is broken, use **Bug** instead. An enhancement adds to one screen or flow - a link, a column, a filter, a button. Bigger work (new screens, new data, several flows) needs a design first; ditoAi will say so if the plan comes out too large.
+  - type: input
+    id: where
+    attributes:
+      label: Where should it go?
+      description: The page, dialog or flow - e.g. "Contracts > a contract's page, under History" or "Settings > Notifications".
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What should you be able to do or see?
+      description: In your own words. Paste or drag in a screenshot of where it goes, or a sketch.
+      placeholder: See the items this record created, and open one to act on it.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What would you do with it?
+      description: The task it helps with. It decides what is worth showing - e.g. "when a visit is missed, open its ticket and reassign it".
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: How will you know it is done?
+      description: What you will check - e.g. "each cycle lists its tickets with their status; clicking one opens it".
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Screen
+      options:
+        - Desktop and phone
+        - Desktop
+        - Phone
+        - Tablet
+    validations:
+      required: true
+  - type: textarea
+    id: not
+    attributes:
+      label: Anything it should not do or change?
+      description: Optional - limits, or what must stay as it is.
+    validations:
+      required: false
